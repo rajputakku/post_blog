@@ -30,6 +30,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.post_id = @post.id
+    @comment.user_id = current_user.id
      @comment.save
      respond_to do |format|
       format.js{redirect_to post_path(params[:post_id])}
@@ -75,7 +76,7 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-     params.require(:comment).permit(:author_name, :body, :post_id)
+     params.require(:comment).permit(:body, :post_id, :user_id)
 
     end
 

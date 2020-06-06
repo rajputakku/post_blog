@@ -10,15 +10,19 @@
       </ul>
     </div>
   <% end %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
    <p>
-    <%= form.label :title %><br />
-    <%= form.text_field :title %>
+    <%= form.label :company_name %><br />
+    <%= form.text_field :company_name %>
   </p>
   <p>
-    <%= form.label :body %><br />
+    <%= form.label :about %><br />
     <%= form.text_area :body %>
   </p>
-
+  <p>
+    <%= form.label :recommendation %><br />
+    <%= form.select :recommendation, ['sell', 'buy']%>
+  </p>
   <div class="actions">
     <%= form.submit %>
   </div>

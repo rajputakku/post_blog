@@ -1,12 +1,16 @@
 <h1> Post </h1>
 <h3><%= flash.notice %></h3>
 <p>
-	<label>Title :</label>
-	<i><%= @post.title %></i>
+	<label>Company Name:</label>
+	<i><%= @post.company_name %></i>
 </p>
  <p>
-	<label> Body :</label>
+	<label> Body:</label>
 	<i> <%= @post.body %> <i>
+</p>
+<p>
+	<label> Recommendation:</label>
+	<i> <%= @post.recommendation %> <i>
 </p>
 	
 <div class="post_comment">

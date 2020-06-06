@@ -1,0 +1,12 @@
+
+      <h1>Welcome!</h1>
+      <p>A Stock Recommendation Blog</p>
+      <p>
+      	<% if current_user.present? %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% else %>
+        <%= link_to 'Register', new_user_registration_path %>
+        <%= link_to 'Login', new_user_session_path %>
+        <% end %>
+      </p>
+    
